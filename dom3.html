@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Nomor 3 - Ubah Warna Judul</title>
+</head>
+<body>
+
+  <h1 id="judul">Latihan DOM - Ubah Warna Judul</h1>
+
+  <button id="btnMerah" style="background-color: red; color: white;">Merah</button>
+  <button id="btnBiru" style="background-color: blue; color: white;">Biru</button>
+  <button id="btnHijau" style="background-color: green; color: white;">Hijau</button>
+
+  <script>
+    const judul = document.getElementById("judul");
+
+    document.getElementById("btnMerah").addEventListener("click", function() {
+      judul.style.color = "red";
+    });
+    document.getElementById("btnBiru").addEventListener("click", function() {
+      judul.style.color = "blue";
+    });
+    document.getElementById("btnHijau").addEventListener("click", function() {
+      judul.style.color = "green";
+    });
+  </script>
+
+</body>
+</html>

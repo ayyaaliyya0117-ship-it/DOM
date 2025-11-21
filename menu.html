@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu Makanan</title>
+</head>
+<body>
+<script language ="JavaScript">
+  var menu = [
+    "Nasi Goreng - Rp 15.000",
+    "Mie Ayam - Rp 12.000",
+    "Sate Ayam - Rp 20.000",
+    "Es Teh - Rp 5.000",
+    "Es Jeruk - Rp 7.000"
+  ];
+
+  var daftar = "Daftar Menu:\n";
+  for (var i = 0; i < menu.length; i++) {
+    daftar += (i+1) + ". " + menu[i] + "\n";
+  }
+
+  var pilih = prompt(daftar + "\nMasukkan nomor menu:");
+
+  pilih = parseInt(pilih);
+  if (pilih >= 1 && pilih <= menu.length) {
+    alert("Anda memilih " + menu[pilih-1]);
+  } else {
+    alert("Nomor menu tidak valid.");
+  }
+</script>
+</body>
+</html>

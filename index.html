@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PERHITUNGAN FAKTORIAL dan DERET</title>
+  <script type="text/javascript">
+    function hitung() {
+      var n = parseInt(document.form1.txtN.value);
+      if (isNaN(n) || n < 0) {
+        alert("Masukkan bilangan bulat positif!");
+        return;
+      }
+
+      var faktorial = 1;
+      for (var i = 1; i <= n; i++) {
+        faktorial *= i;
+      }
+
+      var jumlah = 0;
+      for (var j = 1; j <= n; j++) {
+        jumlah += j;
+      }
+
+      document.form1.txtFaktorial.value = faktorial;
+      document.form1.txtJumlah.value = jumlah;
+    }
+
+    function resetForm() {
+      document.form1.reset();
+    }
+  </script>
+</head>
+<body>
+  <form name="form1">
+    <table border="1" cellpadding="9" cellspacing="0" align="center">
+      <tr>
+        <th colspan="2">PERHITUNGAN<br>FAKTORIAL dan DERET</th>
+      </tr>
+      <tr>
+        <td>N</td>
+        <td><input type="text" name="txtN"></td>
+      </tr>
+      <tr>
+        <td>Hasil</td>
+        <td type="text" name="txtHasil" readonly></td>
+      </tr>
+      <tr>
+        <td>Faktorial</td>
+        <td><input type="text" name="txtFaktorial" readonly></td>
+      </tr>
+      <tr>
+        <td>Jumlah</td>
+        <td><input type="text" name="txtJumlah" readonly></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="button" value="Submit" onclick="hitung()">
+          <input type="reset" value="Reset" onclick="resetForm()">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

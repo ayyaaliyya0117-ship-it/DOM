@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PERHITUNGAN BUNGA</title>
+  <script type="text/javascript">
+    function hitung() {
+      var saldo = parseFloat(document.formBunga.txtSaldo.value);
+      var bunga = parseFloat(document.formBunga.txtBunga.value);
+      var waktu = parseInt(document.formBunga.txtWaktu.value);
+
+      if (isNaN(saldo) || isNaN(bunga) || isNaN(waktu)) {
+        alert("Masukkan semua data dengan benar!");
+        return;
+      }
+
+      var persen = bunga / 100;
+      var saldoAkhir = saldo;
+      var hasil = "";
+
+      for (var i = 1; i <= waktu; i++) {
+        saldoAkhir = saldoAkhir + (saldoAkhir * persen);
+        hasil += "Saldo Bulan " + i + " = Rp. " + saldoAkhir.toFixed(0) + "\n";
+      }
+
+      document.formBunga.txtHasil.value = hasil;
+    }
+
+    function resetForm() {
+      document.formBunga.reset();
+    }
+  </script>
+</head>
+<body>
+  <form name="formBunga">
+    <table border="0" align="center" cellpadding="5" cellspacing="0">
+      <tr>
+        <th colspan="2">PERHITUNGAN BUNGA</th>
+      </tr>
+      <tr>
+        <td colspan="2"><b>Data Input :</b></td>
+      </tr>
+      <tr>
+        <td>Saldo</td>
+        <td><input type="text" name="txtSaldo"></td>
+      </tr>
+      <tr>
+        <td>Bunga</td>
+        <td><input type="text" name="txtBunga"> %</td>
+      </tr>
+      <tr>
+        <td>Waktu</td>
+        <td><input type="text" name="txtWaktu"> Bulan</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="button" value="Submit" onclick="hitung()">
+          <input type="reset" value="Reset" onclick="resetForm()">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><b>Hasil Perhitungan :</b><br>
+          <textarea name="txtHasil" rows="10" cols="50" readonly></textarea>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

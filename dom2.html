@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Nomor 2 - Tampilkan Teks</title>
+</head>
+<body>
+
+  <input type="text" id="inputText" placeholder="">
+  <button id="btnTampil">Tampilkan Teks</button>
+  <p id="outputText"></p>
+
+  <script>
+    const btnTampil = document.getElementById("btnTampil");
+    const inputText = document.getElementById("inputText");
+    const outputText = document.getElementById("outputText");
+
+    btnTampil.addEventListener("click", function() {
+      outputText.textContent = inputText.value;
+      inputText.value = "";
+    });
+  </script>
+
+</body>
+</html>

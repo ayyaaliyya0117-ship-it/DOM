@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Program Diskon Belanja</h2>
+  <p>Masukkan total belanja Anda:</p>
+
+  <input type="number" id="totalBelanja" placeholder="contoh: 120000">
+  <button onclick="hitungDiskon()">Hitung</button>
+
+  <script>
+    function hitungDiskon() {
+      // Ambil nilai input dan ubah ke tipe number
+      var total = parseFloat(document.getElementById("totalBelanja").value);
+
+      // Jika input kosong atau bukan angka, beri nilai 0
+      if (isNaN(total)) {
+        alert("Masukkan angka total belanja yang valid!");
+        return;
+      }
+
+      // Hitung diskon
+      var diskon = 0;
+      if (total > 100000) {
+        diskon = total * 0.1; // 10%
+      }
+
+      // Hitung total yang harus dibayar
+      var totalBayar = total - diskon;
+
+      // Tampilkan hasil dengan alert
+      alert(
+        "Total Belanja: Rp " + total.toFixed(2) +
+        "\nDiskon: Rp " + diskon.toFixed(2) +
+        "\nTotal yang Harus Dibayar: Rp " + totalBayar.toFixed(2)
+      );
+    }
+  </script>
+</body>
+</html>

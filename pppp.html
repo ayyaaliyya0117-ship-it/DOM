@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaktif Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: background-color 0.3s;
+      background-color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      color: black;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .ubah-bg { background-color: green; }
+    .merah { background-color: red; }
+    .kuning { background-color: yellow; }
+    .hijau { background-color: green; }
+
+    input {
+      padding: 8px;
+      margin-right: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="judul">Ayya Aliyya</h1>  
+
+  <button class="ubah-bg" onclick="ubahBg()">Klik</button>
+
+  <br><br>
+  <input type="text" id="teksInput" placeholder="Ketik sesuatu di sini">
+  <button onclick="tampilkanTeks()">Tampilkan</button>
+  <p id="output"></p>
+
+  <br>
+
+  <button class="merah" onclick="ubahWarnaJudul('red')">Merah</button>
+  <button class="kuning" onclick="ubahWarnaJudul('yellow')">Kuning</button>
+  <button class="hijau" onclick="ubahWarnaJudul('green')">Hijau</button>
+
+  <script>
+    let bgHijau = false;
+
+    function ubahBg() {
+      document.body.style.backgroundColor = bgHijau ? "white" : "lightgreen";
+      bgHijau = !bgHijau;
+    }
+
+    function tampilkanTeks() {
+      const teks = document.getElementById("teksInput").value;
+      document.getElementById("output").textContent = teks;
+    }
+
+    function ubahWarnaJudul(warna) {
+      document.getElementById("judul").style.color = warna;
+    }
+  </script>
+</body>
+</html>

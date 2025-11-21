@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let totalBelanja = prompt("Masukkan total belanja Anda:");
+
+        if (totalBelanja > 100000) {
+        let diskon = totalBelanja * 0.1; 
+        totalBelanja = totalBelanja - diskon;
+        alert("Anda mendapat diskon 10%!\nTotal yang harus Anda bayar: Rp " + totalBelanja.toFixed(0));
+        } else {
+        alert("Total yang harus Anda bayar: Rp " + totalBelanja);
+        }
+
+    </script>
+</body>
+</html>

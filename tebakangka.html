@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Tebak Angka</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #e0e0e0; 
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .game-container {
+      background: #f9f9f9;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 340px;
+      border-top: 6px solid maroon; 
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: maroon; 
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+      background: #f0f0f0;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: maroon;
+      box-shadow: 0 0 6px rgba(128,0,0,0.6);
+      background: #fff;
+    }
+
+    button {
+      padding: 12px 18px;
+      background: maroon; 
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #800000; 
+    }
+
+    #hasil {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 15px;
+      color: #333;
+      min-height: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h2>Tebak Angka Rahasia</h2>
+    <p>Tebaklah angka rahasia yang ada di bawah:</p>
+
+    <div class="input-group">
+      <input type="number" id="tebakan" placeholder="Masukkan angka">
+      <button onclick="cekTebakan()">Cek</button>
+    </div>
+
+    <p id="hasil"></p>
+  </div>
+
+  <script type="text/javascript">
+    const angkaRahasia = 10;
+
+    function cekTebakan() {
+      const tebakan = parseInt(document.getElementById("tebakan").value);
+      const hasil = document.getElementById("hasil");
+
+      if (isNaN(tebakan)) {
+        hasil.textContent = "Masukkan angka terlebih dahulu!";
+        hasil.style.color = "gray";
+        return;
+      }
+
+      if (tebakan < angkaRahasia) {
+        hasil.textContent = "Salah! Tebakan terlalu kecil";
+        hasil.style.color = "red";
+      } else if (tebakan > angkaRahasia) {
+        hasil.textContent = "Salah! Tebakan terlalu besar";
+        hasil.style.color = "red";
+      } else {
+        hasil.textContent = "Selamat tebakan benar!";
+        hasil.style.color = "green"; 
+      }
+    }
+  </script>
+</body>
+</html>
